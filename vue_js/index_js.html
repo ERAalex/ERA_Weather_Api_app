@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- подключаем версию для разработки -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- подключаем библиотеку для асинхронного запроса -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    </head>
+
+    <body>
+
+        <div class="">
+            <div id="app">
+                    <!-- чтобы переменная cityCss сразу перезаписывала переменную, которую дальше будем вставлять в API ссылку нам надо использовать приписку this.cityCSS - this!!! -->
+                <input type="text" v-on:input="this.cityCSS = $event.target.value" v-model="cityCSS">
+                <p>City: {{cityCSS}}</p>
+                
+                <!-- выводим каждый элемент из переменной temp_citie куда сохранены данные json, через цикл v-for -->
+                <p v-for="temp_data in temp_citie">API Temperature City: {{temp_data}}</p>
+
+                <!-- кнопка при нажатии запускаем функцию getTemperature, которая описана ниже -->
+                <div>
+                    <button type="button" @click="getTemperature">выбрать город</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+        <script type="text/javascript">
+            new Vue({
+                el: '#app',
+                data: {
+                    message: '',
+                    cityCSS: '',
+                    temp_citie: '',
+                    url: {
+                        api_url: 'http://127.0.0.1:8000/api/v1/city/'
+                    }
+
+                },
+                created: function(){
+
+
+                },
+
+                methods: {
+                    getTemperature(){
+                        axios.get(this.url.api_url + cityCSS).then((response) => {
+                            console.log(response.data);
+                            this.temp_citie = response.data;
+                        });
+                    }
+
+                }
+
+
+            })
+        </script>
+    
+
+    </body>
+
+
+
+</html>
