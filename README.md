@@ -22,10 +22,16 @@ A system has been prepared to check the weather. The main idea: <br>
 1. Django API Server.<br>
 - use API of https://openweathermap.org/api to get new information abot weather of some city.<br>
 - save data in database.<br>
-- Django REST Framework help us to givbe information to our Vue JS app.<br>
+- Django REST Framework help us to give information to our Vue JS app.<br>
 
 2. Vue JS.<br>
 - the user can write the name of city and get information from our Django Api Server.<br>
+
+
+Interesting points about API of openweather:<br>
+- First we need to get parameters such as lon and lat, and only then we search for temperature of a city using them. Therefore, I have prepared a function that makes 2 API requests to search for parameters (lon / lat) of city on request and to search for the weather of the area.<br>
+- We get a JSON response with data in Kelvin, so we need to translate it to Celsius
+
 
 <br>
 
