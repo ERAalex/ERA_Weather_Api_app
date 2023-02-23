@@ -2,15 +2,11 @@
 #### E.R.A. - Espinosa Rozov Alexander - python developer.
 # Educational project - API Weather - openweather
 
-<img src="https://github.com/ERAalex/ERA_Weather_Api_app/blob/main/weather_jpg.jpeg">
+<img src="https://github.com/ERAalex/ERA_Weather_Api_app/blob/main/weather_pic.jpeg">
 <p>
   <a href="https://www.linkedin.com/in/alexander-espinosa-rozov-b3b270121/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"></a>
 </p>
 <br>
-
-
-## Attention 
-In this github repository is only part of a commercial project, if you are an employer and want to see the whole project, write to me and I will provide access to a private repository: 
 
 <br><a href="mailto:erapyth@gmail.com"><img src="https://img.shields.io/badge/-Gmail%20contact%20me-red"></a>
 <br><a href="https://t.me/espinosa_python"><img src="https://img.shields.io/badge/-Telegram-blue"></a>
@@ -21,12 +17,16 @@ In this github repository is only part of a commercial project, if you are an em
       <img src="https://github.com/ERAalex/PREVIEW_project_site_buisness_card_Maria-/blob/main/website_icons.jpg" >
     </a>
 
-A system has been prepared to monitor employees. Every day a qr code for an employee comes to the phone, which he shows to the guard. The guard can view all the employee's data and his status - active or not:  <br>
+A system has been prepared to check the weather. The main idea: 
 
-- Control sistem. <br>
-- Qr-code logic.<br>
-- View employees in the database and the ability to change data.<br>
-- Flask - project.<br>
+1. Django API Server.<br>
+- use API of https://openweathermap.org/api to get new information abot weather of some city.<br>
+- save data in database.<br>
+<br><br>
+2. VUE JS.<br>
+- the user can write the name of city and get information from our Django Api Server.<br>
+
+<br>
 
 ## Technologies
 Main:<br/>
