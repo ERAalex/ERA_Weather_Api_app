@@ -25,7 +25,7 @@ A system has been prepared to check the weather. The main idea: <br>
 - Django REST Framework help us to give information to our Vue JS app.<br>
 
 2. Vue JS.<br>
-- the user can write the name of city and get information from our Django Api Server.<br>
+- the user can write the name of city and get information from our Django Api Server.<br><br>
 
 
 Interesting points about API of openweather:<br>
@@ -36,7 +36,7 @@ An interesting problem with requests from VUE JS - Axios to our Django server. R
 - from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
 The solution to this problem:<br>
-- https://stackoverflow.com/questions/22476273/no-access-control-allow-origin-header-is-present-on-the-requested-resource-i
+- https://stackoverflow.com/questions/22476273/no-access-control-allow-origin-header-is-present-on-the-requested-resource-i<br>
 The main idea is:
 pip install django-cors-headers
 
