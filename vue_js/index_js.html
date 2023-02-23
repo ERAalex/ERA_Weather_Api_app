@@ -8,6 +8,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- подключаем библиотеку для асинхронного запроса -->
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="main.css">
 
 
     </head>
@@ -15,13 +16,17 @@
     <body>
 
         <div class="">
-            <div id="app">
+            <div id="app" class="box_fon">
                     <!-- чтобы переменная cityCss сразу перезаписывала переменную, которую дальше будем вставлять в API ссылку нам надо использовать приписку this.cityCSS - this!!! -->
                 <input type="text" v-on:input="this.cityCSS = $event.target.value" v-model="cityCSS">
                 <p>City: {{cityCSS}}</p>
+                API Temperature City <br><br>
                 
                 <!-- выводим каждый элемент из переменной temp_citie куда сохранены данные json, через цикл v-for -->
-                <p v-for="temp_data in temp_citie">API Temperature City: {{temp_data}}</p>
+                <div v-for="(value, key) in temp_citie">
+                    <div>{{key}}: {{value}}</div>
+                </div>
+                <br>
 
                 <!-- кнопка при нажатии запускаем функцию getTemperature, которая описана ниже -->
                 <div>
