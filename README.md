@@ -32,7 +32,7 @@ Interesting points about API of openweather:<br>
 - First we need to get parameters such as lon and lat, and only then we search for temperature of a city using them. Therefore, I have prepared a function that makes 2 API requests to search for parameters (lon / lat) of city on request and to search for the weather of the area.<br>
 - We get a JSON response with data in Kelvin, so we need to translate it to Celsius <br><br>
 
-An interesting problem with requests from VUE JS - Axios to our Django server. Returns an error when making requests to the local server:<br>
+An interesting problem with requests from VUE JS - Axios to our Django LOCALHOST server. Returns an error when making requests to the local server:<br>
 - from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
 The solution to this problem:<br>
