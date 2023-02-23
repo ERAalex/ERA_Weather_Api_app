@@ -22,7 +22,7 @@ A system has been prepared to check the weather. The main idea:
 1. Django API Server.<br>
 - use API of https://openweathermap.org/api to get new information abot weather of some city.<br>
 - save data in database.<br>
-<br>
+
 2. VUE JS.<br>
 - the user can write the name of city and get information from our Django Api Server.<br>
 
