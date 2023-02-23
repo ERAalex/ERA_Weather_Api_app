@@ -6,7 +6,6 @@
 <p>
   <a href="https://www.linkedin.com/in/alexander-espinosa-rozov-b3b270121/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"></a>
 </p>
-<br>
 
 <br><a href="mailto:erapyth@gmail.com"><img src="https://img.shields.io/badge/-Gmail%20contact%20me-red"></a>
 <br><a href="https://t.me/espinosa_python"><img src="https://img.shields.io/badge/-Telegram-blue"></a>
@@ -17,13 +16,15 @@
       <img src="https://github.com/ERAalex/PREVIEW_project_site_buisness_card_Maria-/blob/main/website_icons.jpg" >
     </a>
 
-A system has been prepared to check the weather. The main idea: 
+This application shows us the possibility of VUE JS interacting with our Django server via the API. 
+A system has been prepared to check the weather. The main idea: <br>
 
 1. Django API Server.<br>
 - use API of https://openweathermap.org/api to get new information abot weather of some city.<br>
 - save data in database.<br>
+- Django REST Framework help us to givbe information to our Vue JS app.<br>
 
-2. VUE JS.<br>
+2. Vue JS.<br>
 - the user can write the name of city and get information from our Django Api Server.<br>
 
 <br>
