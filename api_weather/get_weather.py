@@ -6,7 +6,7 @@ from config.config_tokens import weather_api_token
 weather_api = weather_api_token
 
 def get_city_weather(city_name):
-    # получаем координаты по названию города
+    # получаем координаты по названию города.
     complete_url = f'http://api.openweathermap.org/geo/1.0/direct?q={city_name}&limit=5&appid='+weather_api
     response = requests.get(complete_url)
     result = response.json()
