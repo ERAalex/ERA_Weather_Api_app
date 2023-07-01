@@ -13,7 +13,7 @@ environ.Env.read_env()
 SECRET_KEY = env("SECRET_KEY", default="SOME_SECRET_KEY")
 
 DEBUG = env("DEBUG_STATUS", default="DEBUG_STATUS")
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
@@ -75,8 +75,8 @@ DATABASES = {
         "USER": env("DB_USER", default="DB_USER"),
         "PASSWORD": env("DB_PASS", default="DB_PASS"),
         # используй db для docker-compose
-        # "HOST": "db",
-        "HOST": env("DB_HOST", default="localhost"),
+        "HOST": "db",
+        # "HOST": env("DB_HOST", default="localhost"),
         "PORT": env("DB_PORT", default=5432),
     }
 }
@@ -200,12 +200,12 @@ SWAGGER_SETTINGS = {
 }
 
 '''Docker-compose - Celery settings'''
-# CELERY_BROKER_URL = 'redis://redis:6379'
-# CELERY_RESULT_BACKEND = 'redis://redis:6379'
+CELERY_BROKER_URL = 'redis://redis:6379'
+CELERY_RESULT_BACKEND = 'redis://redis:6379'
 
 '''Localhost - Celery settings'''
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+# CELERY_BROKER_URL = 'redis://localhost:6379'
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
 
 CELERY_ACCEPT_CONTENT = ['application/json']

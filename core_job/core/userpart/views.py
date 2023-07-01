@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from .serializers import UserAccountSerializer
 from .models import UserRelations
 from .tasks import confirmation_relation_email_celery
+from .email_confirmation import confirmation_relation_email
 from .models import UserAccount
 
 from django_filters import rest_framework as filters
@@ -46,13 +47,13 @@ def make_match(request, match):
             user_data.liked_persons.add(match)
 
             ''' Обычная отправка письма - если не нужен сelery:'''
-            # confirmation_relation_email(user_email=request.user.email, user_name=request.user.name,
-            #                             user_match_email=check_match.user.email)
+            confirmation_relation_email(user_email=request.user.email, user_name=request.user.name,
+                                        user_match_email=check_match.user.email)
 
             ''' Celery - отправляем письмо'''
-            confirmation_relation_email_celery.delay(user_email=request.user.email,
-                                                     user_name=request.user.name,
-                                                     user_match_email=check_match.user.email)
+            # confirmation_relation_email_celery.delay(user_email=request.user.email,
+            #                                          user_name=request.user.name,
+            #                                          user_match_email=check_match.user.email)
 
             return Response('письмо отправлено')
 
