@@ -16,19 +16,19 @@ services:
              python3 manage.py runserver 0.0.0.0:8000"
  
     environment:
-      - DB_HOST=${DB_HOST}
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASS=${DB_PASS}
+      - DB_HOST=localhost
+      - DB_NAME=work_project
+      - DB_USER=postgres
+      - DB_PASS=1221
     depends_on:
       - db
              
   db:
     image: postgres
     environment:
-      - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=work_project
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1221
     volumes:
       - ./core:/app
   redis:
@@ -41,10 +41,10 @@ services:
     volumes:
       - ./core:/app
     environment:
-      - DB_HOST=${REDIS_DB_HOST}
-      - DB_NAME=${REDIS_DB_NAME}
-      - DB_USER=${REDIS_DB_USER}
-      - DB_PASS=${REDIS_DB_PASS}
+      - DB_HOST=localhost
+      - DB_NAME=work_project
+      - DB_USER=postgres
+      - DB_PASS=1221
     depends_on:
       - db
       - redis
@@ -54,7 +54,7 @@ services:
     image: dpage/pgadmin4
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+      PGADMIN_DEFAULT_EMAIL: eraspb@mail.ru
+      PGADMIN_DEFAULT_PASSWORD: 1221
     ports:
       - "5050:80"
